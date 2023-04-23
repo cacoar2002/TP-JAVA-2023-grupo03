@@ -1,5 +1,8 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Estudiante {
 
     private int numero;
@@ -15,7 +18,7 @@ public class Estudiante {
     private String especie;
     private String blodStatus;
 
-    public Estudiante(int numero, String nombre, char genero, String especie, String blodStatus) {
+    public Estudiante(int numero, String nombre, char genero, String specie, String blodStatus) {
         this.numero = numero;
         this.nombre = nombre;
         this.genero = genero;

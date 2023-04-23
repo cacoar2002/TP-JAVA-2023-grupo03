@@ -1,12 +1,13 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Casa {
 
-    private int idCasa;
-    private String nombre;
-    private ArrayList<Estudiante> estudiantes;
+    private final int idCasa;
+    private final String nombre;
+    private final ArrayList<Estudiante> estudiantes;
 
     public Casa(int idCasa, String nombre) {
         this.idCasa = idCasa;
@@ -22,18 +23,27 @@ public class Casa {
         return idCasa;
     }
 
-    public int getCantidadEstudiantes(){
+    public int getCantidadEstudiantes() {
         return estudiantes.size();
     }
 
-    public void agregarEstudiante(Estudiante e){
-        if (e != null && e.getNombreCasa().equals(nombre)){
+    public void agregarEstudiante(Estudiante e) {
+        if (e != null && e.getNombreCasa().equals(nombre)) {
             e.setCasa(this);
             estudiantes.add(e);
-        }
-        else
+        } else
             throw new RuntimeException("Nombre de casa inválido. [" + e.getNombreCasa() + "]");
 
     }
+    public List<Estudiante> getestudiantenoHumano() {
+        List<Estudiante> noHumano;
+        noHumano = new ArrayList<>();
+        for (Estudiante estudiante : this.estudiantes) {
+            if (estudiante.getEspecie() != "humano") {
+                noHumano.add(estudiante);
 
+            }
+        }
+        return noHumano;
+    }
 }
