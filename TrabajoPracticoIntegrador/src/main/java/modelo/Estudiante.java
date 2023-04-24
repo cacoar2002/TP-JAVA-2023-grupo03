@@ -85,8 +85,14 @@ public class Estudiante {
             int numero = Integer.parseInt(datos[0]);
             String nombre = datos[1];
             char genero = (datos[2].equals("Female") || datos[2].equals("Male")) ? datos[2].charAt(0) : 'X';
+
+//            if (datos[2].equals("Female") || datos[2].equals("Male"))
+//                genero = datos[2].charAt(0);
+//            else
+//                genero = 'X';
+//
             String nombreCasa = datos[4];
-            String especie = datos[5];
+            String especie = datos[5].trim();
             String blodStatus = datos[6];
 
             Estudiante e = new Estudiante(numero, nombre, genero, especie, blodStatus);
